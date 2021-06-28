@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="MauiTemplate.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:MauiTemplate.Pages"
+    xmlns:helpers="clr-namespace:MauiTemplate.Helpers"
+    Title=".NET MAUI">
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Dark=Black, Light=White}" />
+                <Setter Property="Shell.ForegroundColor" Value="{AppThemeBinding Dark=White, Light=Black}" />
+                <Setter Property="Shell.TitleColor" Value="{AppThemeBinding Dark=White, Light=Black}" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Dark=White, Light=Black}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Dark=Black, Light=White}" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Dark=Black, Light=White}" />
+            </Style>
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="TabBar" />
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="FlyoutItem" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate pages:MainPage}"
+            Route="MainPage">
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="IonIcons"
+                             Glyph="{x:Static helpers:IonIcons.IosHome}"/>
+            </ShellContent.Icon>
+        </ShellContent>
+        <ShellContent
+            Title="Counter"
+            ContentTemplate="{DataTemplate pages:CounterPage}"
+            Route="CounterPage">
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="IonIcons"
+                             Glyph="{x:Static helpers:IonIcons.IosAdd}"/>
+            </ShellContent.Icon>
+        </ShellContent>
+        <ShellContent
+            Title="Fetch Data"
+            ContentTemplate="{DataTemplate pages:FetchDataPage}"
+            Route="FetchDataPage">
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="IonIcons"
+                             Glyph="{x:Static helpers:IonIcons.IosSunny}"/>
+            </ShellContent.Icon>
+        </ShellContent>
+    </TabBar>
+</Shell>
