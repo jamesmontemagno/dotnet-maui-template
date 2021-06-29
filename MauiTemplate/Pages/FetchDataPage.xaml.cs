@@ -1,20 +1,29 @@
 ﻿using System;
+using System.Collections.ObjectModel;
+using MauiTemplate.Data;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui.Controls;
 
 namespace MauiTemplate.Pages
 {
     public partial class FetchDataPage : ContentPage
     {
+        public ObservableCollection<WeatherForecast> Forecasts { get; } = new ObservableCollection<WeatherForecast>();
+
+        readonly WeatherForecastService weatherForecastService;
         public FetchDataPage()
         {
             InitializeComponent();
+            weatherForecastService = ServiceProvider.GetService<WeatherForecastService>();
+            BindingContext = this;
         }
 
-        int count = 0;
-        private void OnCounterClicked(object sender, EventArgs e)
+        protected override async void OnAppearing()
         {
-            count++;
-            CounterLabel.Text = $"Current count: {count}";
+            base.OnAppearing();
+
+            foreach (var forecast in await weatherForecastService.GetForecastAsync(DateTime.Now))
+                Forecasts.Add(forecast);
         }
     }
 }

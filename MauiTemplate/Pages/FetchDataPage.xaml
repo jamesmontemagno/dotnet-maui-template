@@ -3,43 +3,21 @@
              x:Class="MauiTemplate.Pages.FetchDataPage"
              BackgroundColor="{DynamicResource PageBackgroundColor}">
 
-    <ScrollView Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
-        <StackLayout>
-            <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto,*">
-            
-                <Label Text="Hello, World!"
-                    Grid.Row="0"
-                    SemanticProperties.HeadingLevel="Level1"
-                    FontSize="32"
-                    HorizontalOptions="CenterAndExpand" />
-
-                <Label Text="Welcome to .NET Multi-platform App UI"
-                    Grid.Row="1"
-                    SemanticProperties.Hint="Counts the number of times you click" 
-                    FontSize="16"
-                    HorizontalOptions="CenterAndExpand" />
-
-                <Label Text="Current count: 0"
-                    Grid.Row="2"
-                    SemanticProperties.Hint="Counts the number of times you click"
-                    FontSize="18"
-                    FontAttributes="Bold"
-                    x:Name="CounterLabel"
-                    HorizontalOptions="Center" />
-
-                <Button Text="Click me"
-                    Grid.Row="3"
-                    SemanticProperties.Hint="Counts the number of times you click"
-                    Clicked="OnCounterClicked"
-                    HorizontalOptions="Center" />
-
-                <Image Grid.Row="4"
-                    Source="dotnet_bot.png"
-                    SemanticProperties.Description="Cute dotnet bot waving hi to you!"
-                    WidthRequest="300"
-                    HorizontalOptions="Center" />
-
-            </Grid>
-        </StackLayout>
-    </ScrollView>
+    <CollectionView ItemsSource="{Binding Forecasts}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid Margin="10">
+                    <Frame Padding="10" BackgroundColor="White}">
+                        <VerticalStackLayout>
+                            <Label TextColor="Black" Text="{Binding Date, StringFormat='Date: {0}'}"/>
+                            <Label TextColor="Black" Text="{Binding TemperatureC, StringFormat='Temp. (C): {0}'}"/>
+                            <Label TextColor="Black" Text="{Binding TemperatureF, StringFormat='Temp. (F): {0}'}"/>
+                            <Label TextColor="Black" Text="{Binding Summary, StringFormat='Summary: {0}'}"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+        
+    </CollectionView>
 </ContentPage>
