@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="MauiTemplate.Components.SurveyPrompt"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:styles="clr-namespace:MauiTemplate.Resources.Styles">
+    <ContentView.Content>
+        <Frame Padding="10">
+            <VerticalStackLayout Spacing="10">
+                <HorizontalStackLayout Spacing="10">
+                    <Label
+                        FontFamily="IonIcons"
+                        Style="{StaticResource Headline}"
+                        Text="{x:Static styles:IonIcons.MdSnow}" />
+                    <Label Style="{StaticResource Headline}" 
+                           Text="{Binding SurveyTitle, FallbackValue='How is .NET MAUI working for you?'}" />
+                </HorizontalStackLayout>
+                <Label Style="{StaticResource Primary}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Please take our " />
+                            <Span Text="brief survey" TextColor="{AppThemeBinding Light={StaticResource SystemBlue}, Dark={StaticResource SystemBlueDark}}">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="SurveyTapped" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" and tell us what you think. " />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </VerticalStackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

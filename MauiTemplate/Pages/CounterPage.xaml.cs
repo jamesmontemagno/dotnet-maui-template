@@ -1,20 +1,38 @@
 ﻿using System;
+using System.Windows.Input;
 using Microsoft.Maui.Controls;
 
 namespace MauiTemplate.Pages
 {
     public partial class CounterPage : ContentPage
     {
+
         public CounterPage()
         {
             InitializeComponent();
         }
+    }
 
-        int count = 0;
-        private void OnCounterClicked(object sender, EventArgs e)
+    public class CounterViewModel : BindableObject
+    {
+
+        ICommand clickedCommand;
+        public ICommand ClickedCommand => clickedCommand ??= new Command(IncrementCount);
+
+        private void IncrementCount()
         {
-            count++;
-            CounterLabel.Text = $"Current count: {count}";
+            Count++;
+        }
+
+        private int count = 0;
+        public int Count
+        {
+            get => count;
+            set
+            {
+                count = value;
+                OnPropertyChanged();
+            }
         }
     }
 }

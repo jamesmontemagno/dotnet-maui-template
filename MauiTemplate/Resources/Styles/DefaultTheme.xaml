@@ -1,0 +1,163 @@
+﻿<ResourceDictionary
+    x:Class="MauiTemplate.Resources.Styles.DefaultTheme"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="PageBackgroundColor">#f2f2f7</Color>
+    <Color x:Key="PageBackgroundColorDark">Black</Color>
+
+    <Color x:Key="PrimaryTextColor">#000000</Color>
+    <Color x:Key="PrimaryTextColorDark">White</Color>
+
+    <Color x:Key="CardBackground">White</Color>
+    <Color x:Key="CardBackgroundDark">#1C1C1E</Color>
+
+    <Color x:Key="SystemBlue">#007AFF</Color>
+    <Color x:Key="SystemGreen">#34C759</Color>
+    <Color x:Key="SystemIndigo">#5856D6</Color>
+    <Color x:Key="SystemOrange">#FF9500</Color>
+    <Color x:Key="SystemPink">#FF2D55</Color>
+    <Color x:Key="SystemPurple">#AF52DE</Color>
+    <Color x:Key="SystemRed">#FF3B30</Color>
+    <Color x:Key="SystemTeal">#5AC8FA</Color>
+    <Color x:Key="SystemYellow">#FFCC00</Color>
+
+    <Color x:Key="SystemGray">#8E8E93</Color>
+    <Color x:Key="SystemGray2">#AEAEB2</Color>
+    <Color x:Key="SystemGray3">#C7C7CC</Color>
+    <Color x:Key="SystemGray4">#D1D1D6</Color>
+    <Color x:Key="SystemGray5">#E5E5EA</Color>
+    <Color x:Key="SystemGray6">#F2F2F7</Color>
+
+    <Color x:Key="SystemBlueDark">#0A84FF</Color>
+    <Color x:Key="SystemGreenDark">#30D158</Color>
+    <Color x:Key="SystemIndigoDark">#5E5CE6</Color>
+    <Color x:Key="SystemOrangeDark">#FF9F0A</Color>
+    <Color x:Key="SystemPinkDark">#FF375F</Color>
+    <Color x:Key="SystemPurpleDark">#BF5AF2</Color>
+    <Color x:Key="SystemRedDark">#FF453A</Color>
+    <Color x:Key="SystemTealDark">#64D2FF</Color>
+    <Color x:Key="SystemYellowDark">#FFD60A</Color>
+
+    <Color x:Key="SystemGrayDark">#8E8E93</Color>
+    <Color x:Key="SystemGray2Dark">#636366</Color>
+    <Color x:Key="SystemGray3Dark">#484848</Color>
+    <Color x:Key="SystemGray4Dark">#3A3A3C</Color>
+    <Color x:Key="SystemGray5Dark">#2C2C2E</Color>
+    <Color x:Key="SystemGray6Dark">#1C1C1E</Color>
+
+
+    <!--  Styles that apply to all types  -->
+    <Style ApplyToDerivedTypes="True" TargetType="Page">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource PageBackgroundColor}, Dark={StaticResource PageBackgroundColorDark}}" />
+    </Style>
+
+    <Style ApplyToDerivedTypes="True" TargetType="NavigationPage">
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource PageBackgroundColor}, Dark={StaticResource PageBackgroundColorDark}}" />
+        <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource PageBackgroundColor}, Dark={StaticResource PageBackgroundColorDark}}" />
+        <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource PrimaryTextColor}, Dark={StaticResource PrimaryTextColorDark}}" />
+    </Style>
+
+    <Style ApplyToDerivedTypes="True" TargetType="Frame">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource CardBackground}, Dark={StaticResource CardBackgroundDark}}" />
+    </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource PrimaryTextColor}, Dark={StaticResource PrimaryTextColorDark}}" />
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="FontSize" Value="17" />
+    </Style>
+
+    <Style x:Key="LargeTitle" TargetType="Label">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+    </Style>
+    <Style x:Key="SectionTitle" TargetType="Label">
+        <Setter Property="FontSize" Value="27" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource SystemBlue}, Dark={StaticResource SystemBlueDark}}" />
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+    </Style>
+    <Style x:Key="Title1" TargetType="Label">
+        <Setter Property="FontSize" Value="26" />
+        <Setter Property="FontFamily" Value="OpenSansSemiBold" />
+    </Style>
+    <Style x:Key="Headline" TargetType="Label">
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="FontFamily" Value="OpenSansSemiBold" />
+    </Style>
+    <Style x:Key="Subhead" TargetType="Label">
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+    <Style x:Key="SubContent" TargetType="Label">
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+    <Style x:Key="Footnote" TargetType="Label">
+        <Setter Property="FontSize" Value="13" />
+    </Style>
+    <Style x:Key="Small" TargetType="Label">
+        <Setter Property="FontSize" Value="10" />
+    </Style>
+
+    <!--  Text Color Styles  -->
+    <Style x:Key="Primary" TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource PrimaryTextColor}, Dark={StaticResource PrimaryTextColorDark}}" />
+    </Style>
+    <Style x:Key="Secondary" TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource SystemGray2}, Dark={StaticResource SystemGray2Dark}}" />
+    </Style>
+    <Style x:Key="Error" TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource SystemRed}, Dark={StaticResource SystemRedDark}}" />
+    </Style>
+    <Style x:Key="Warning" TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource SystemYellow}, Dark={StaticResource SystemYellowDark}}" />
+    </Style>
+    <Style x:Key="Disabled" TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource SystemGray5}, Dark={StaticResource SystemGray5Dark}}" />
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="TextColor" Value="{StaticResource PrimaryTextColorDark}" />
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="Padding" Value="14,10" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource SystemPurple}, Dark={StaticResource SystemPurpleDark}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource SystemGray5}, Dark={StaticResource SystemGray5Dark}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button" x:Key="PrimaryButtonOutline">
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="TextColor" Value="{StaticResource PrimaryTextColorDark}"/>
+        <Setter Property="BorderWidth" Value="1"/>
+        <Setter Property="BorderColor" Value="{StaticResource PrimaryTextColorDark}"/>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="BorderColor" Value="{AppThemeBinding Light={StaticResource SystemGray5}, Dark={StaticResource SystemGray5Dark}}" />
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource SystemGray5}, Dark={StaticResource SystemGray5Dark}}" />
+                            <Setter Property="BackgroundColor" Value="Transparent"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

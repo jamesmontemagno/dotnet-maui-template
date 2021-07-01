@@ -1,5 +1,5 @@
 ﻿
-namespace MauiTemplate.Helpers
+namespace MauiTemplate.Resources.Styles
 {
     public static class IonIcons
     {

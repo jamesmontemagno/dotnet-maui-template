@@ -33,20 +33,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Remove="AppShell.xaml" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Remove="Resources\Fonts\ionicons.ttf" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <EmbeddedResource Include="AppShell.xaml">
-	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-	  </EmbeddedResource>
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.5.794" />
 		<PackageReference Include="Microsoft.Maui.Essentials" Version="6.0.100-preview.5.798" />
 	</ItemGroup>
@@ -60,6 +46,9 @@
 	<ItemGroup Condition="$(TargetFramework.Contains('-android'))">
 		<AndroidEnvironment Include="Android\AndroidEnvironment.txt" />
 	</ItemGroup>
-
-
+	<ItemGroup>
+	  <MauiXaml Update="Components\SurveyPrompt.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
 </Project>

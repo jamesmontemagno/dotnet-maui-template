@@ -4,7 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pages="clr-namespace:MauiTemplate.Pages"
-    xmlns:helpers="clr-namespace:MauiTemplate.Helpers"
+    xmlns:styles="clr-namespace:MauiTemplate.Resources.Styles"
     Title=".NET MAUI">
     <Shell.Resources>
         <ResourceDictionary>
@@ -31,7 +31,7 @@
             Route="MainPage">
             <ShellContent.Icon>
                 <FontImageSource FontFamily="IonIcons"
-                             Glyph="{x:Static helpers:IonIcons.IosHome}"/>
+                             Glyph="{x:Static styles:IonIcons.IosHome}"/>
             </ShellContent.Icon>
         </ShellContent>
         <ShellContent
@@ -40,7 +40,7 @@
             Route="CounterPage">
             <ShellContent.Icon>
                 <FontImageSource FontFamily="IonIcons"
-                             Glyph="{x:Static helpers:IonIcons.IosAdd}"/>
+                             Glyph="{x:Static styles:IonIcons.IosAdd}"/>
             </ShellContent.Icon>
         </ShellContent>
         <ShellContent
@@ -49,7 +49,7 @@
             Route="FetchDataPage">
             <ShellContent.Icon>
                 <FontImageSource FontFamily="IonIcons"
-                             Glyph="{x:Static helpers:IonIcons.IosSunny}"/>
+                             Glyph="{x:Static styles:IonIcons.IosSunny}"/>
             </ShellContent.Icon>
         </ShellContent>
     </TabBar>
